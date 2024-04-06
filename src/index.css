@@ -1,13 +1,548 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+
+*{
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+  font-size: 100%;
+  color: #fff;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html {
+  scroll-behavior: smooth;
+  font-size: 0.875em;
 }
+
+ul  > li a{
+  list-style: none;
+}
+
+button, input[type="button"] {
+  cursor: pointer;
+}
+
+
+/*### Headings, Call-to-actions, Header Navigation*/
+
+/*
+// <uniquifier>: Use a unique and descriptive class name
+// <weight>: Use a value from 100 to 900
+
+*/
+
+.style-level0  {
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.style-level1 {
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: gray;
+}
+
+button {
+  border:none;
+}
+
+input {
+  color: #000;
+}
+
+
+:root {
+  /*### Primary*/
+--Dark-Blue--intro-and-email-sign-up--background: hsl(217, 28%, 15%);
+--Dark-Blue-main--background: hsl(218, 28%, 13%);
+--Dark-Blue-footer--background: hsl(216, 53%, 9%);
+--Dark-Blue-testimonials--background: hsl(219, 30%, 18%);
+/*### Accent*/
+--Cyan-inside-call-to-action--gradient: hsl(176, 68%, 64%);
+--Blue-inside-call-to-action--gradient: hsl(198, 60%, 50%);
+--Light-Red--error: hsl(0, 100%, 63%);
+/*### Neutral*/
+--White: hsl(0, 0%, 100%);
+}
+
+body{
+background-color: #1b2330;
+overflow-x: hidden;
+}
+
+
+.d-flex {
+  display: flex;
+}
+
+#reponsive-navbar{
+  justify-content: space-between;
+  align-items: center;
+  margin:2.5em 2em;
+  max-width: 100%;
+}
+
+.nav-list .nav-item{
+  margin-right: 1em;
+}
+
+.nav-list .nav-item + .nav-item {
+  margin: 0 1.5em;
+}
+
+.nav-item .nav-link {
+  text-transform: capitalize;
+  flex-grow: 2;
+  flex-shrink: 1;
+  font-weight: 700;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+  color: var(--White);
+  transition: 0.2s ease-in;
+}
+
+
+
+.res-img {
+  width: 74%;
+}
+
+
+.section--img > img { 
+  width: 65%;
+  z-index: 10000;
+
+}
+
+
+
+.header-section {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 0.7em 2em 1em 2em;
+}
+
+
+/*dry-code class*/
+
+.direction-column {
+  flex-direction: column;
+}
+
+.center {
+  text-align: center;
+}
+
+.all-to-center-0 {
+  justify-content: center;
+  align-items: center;
+}
+
+
+/**/
+
+.header-section  .section-title {
+  margin: 1.3em 0;
+  font-size: 1.5em;
+} 
+
+.info-block {
+  padding: 0 5em;
+}
+
+.break-line {
+  display: none;
+}
+
+
+.btn-block-item {
+  margin-top:1.5em ;
+}
+
+.btn-block-item > .btn {
+  width: 55%;
+  height: 50px;
+  border-radius: 50px;
+  background-color: var(--Blue-inside-call-to-action--gradient);
+  color: var(--White);
+}
+
+.btn-block-item > .btn:hover, .btn:active {
+  background-color: var(--Cyan-inside-call-to-action--gradient);
+  transition: 0.5s ease-in-out;
+}
+
+
+.visible0 {
+  display: block;
+}
+
+.visible1 {
+  display: none;
+}
+
+/*como deixar os meus itens acima do image-bg*/
+
+.z-show {
+  position:relative;
+  background: transparent;
+}
+
+.info-block {
+  position: relative;
+  top: 80px;
+  left: 0;
+  margin-bottom: 2em;
+  width: 100vw;
+  height: 45vh;
+  background-color: var(--Dark-Blue-main--background);
+}
+
+
+
+#info {
+  margin-top: -32px;
+}
+
+.section-flex {
+  background-color: var(--Dark-Blue-main--background);
+}
+
+
+
+.bg-image img {
+  position: absolute;
+  top: 40%;
+  left: 0;
+  width: 100%;
+}
+
+.article-zone {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  row-gap: 2em;
+  margin-top: -2em;
+  padding: 2em 5em;
+  width: 100%;
+}
+
+.text-zone {
+  margin-top: 1em;
+}
+
+.card-service {
+  width: 350px;
+  height:253px ;
+  display: flex;
+  margin:  1em auto;
+  border-radius: 2px;
+}
+
+.card-service > div > img {
+  margin: 1.1em 0 1.5em 0;
+}
+
+.only-OneCard {
+  width: 375px;
+  margin-bottom: 50px;
+}
+
+#info-btn {
+align-self: baseline;
+color: var(--Cyan-inside-call-to-action--gradient);
+
+}
+.little-space {
+  position: relative;
+  top: 2px;
+  left: 7px;
+}
+
+div > hr  {
+  margin: 2px auto;
+  width: 39.7%;
+  border-color: var(--Cyan-inside-call-to-action--gradient);
+  opacity: 0.5;
+} 
+
+#info-btn  div > img {
+  width: 18px;
+  height: auto;
+}
+
+.dd:hover >  #info-btn {
+   color: white;
+}
+
+ #info-btn:hover img {
+  filter: grayscale(1);
+}
+
+.dd:hover > hr {
+  border-color: white;
+}
+
+
+
+.only-OneCard > .article-information-section, .information-title {
+  margin: 1.5em 0;
+}
+
+
+.information-text + .information-text {
+  margin: 1em 0;
+}
+
+.block-img  img {
+  width: 75%;
+}
+.circle-img > img {
+  width: 35px;
+  border-radius: 50px;
+  margin-right: 15px;
+}
+
+.circle-img {
+  margin-top: 3em;
+}
+
+.testimonials-card:nth-of-type(1) {
+  position: relative;
+  top: -5px;
+}
+
+.testimonials-card{
+  width: 385px;
+  height: 225px;
+  padding: 3em 2em;
+  margin: 2em 0;
+  background-color: var(--Dark-Blue-testimonials--background);
+  position: relative;
+  z-index: 1000;
+}
+
+.testimonials-card > .profile-info {
+  line-height: 20px;
+}
+
+
+#quote  > img{
+  position:relative ;
+  left: 15px;
+  top: 30px;
+  width: 35px;
+}
+
+.formSection {
+  position: relative;
+  margin: 2.5em 0;
+  width: 100%;
+}
+
+.bottom {
+  margin-bottom: 13em;
+}
+
+ #information-item {
+  padding: 2em 0;
+}
+
+.formCard {
+  position: absolute;
+  top: -13em;
+  left: 5%;
+  width: 90%;
+  height: 380px;
+  background-color: var(--Dark-Blue--intro-and-email-sign-up--background);
+  border-radius: 10px;
+}
+
+#information-item h4{
+    font-size: 1.3em;
+    margin: 1em 0;
+}
+
+#information-item p {
+  padding: 0 3em;
+  font-size: 1.2em;
+}
+
+
+label  {
+  padding: 0 4em ;
+}
+
+input {
+  border: none;
+}
+
+input[name="email"], input[type="button"] {
+  width: 250px;
+  height: 50px;
+  margin-top:1.2em ;
+  border-radius: 50px;
+}
+
+
+input[type="button"] {
+  background-color: #3eafcf;
+  color: #fff;
+  font-size: 1.2em;
+  margin-top: 1.2em;
+  font-weight: bold;
+}
+
+input[name="email"] {
+  padding-left: 28px;
+}
+
+input[name="email"]::placeholder {
+  padding-left: 0.5em;
+}
+
+input[name="email"]:focus {
+  outline: none;
+}
+
+
+
+
+
+
+footer {
+  width: 100%;
+  height: 100%;
+  /*padding: 14em 0 10em 5.5em;*/
+  padding: 14em 5.5em 0 2em;
+  background-color: var(--Dark-Blue-footer--background);
+}
+
+
+
+.footer-row-item {
+  margin: 1.4em 0;
+}
+
+.footer-row-item > p {
+  margin: 1em 0;
+}
+
+
+.footer-row-item > p img{
+  margin-right: 25px;
+}
+
+.test {
+  display: flex;
+}
+
+.test > p {
+  width: 300px;
+  margin-left: 30px;
+}
+
+.footer-row-item p:nth-of-type(2),
+.footer-row-item p:nth-of-type(3) {
+display: flex;
+align-items: center;
+}
+
+.footer-row-item:nth-of-type(2) > nav  li   {
+  margin: 1.5em 0;
+}
+
+.navfooter1 {
+  margin-top: 4em;
+}
+
+.block-2  > p{
+  margin: 17px 0;
+}
+
+#footer-logo {
+  margin-bottom: 1.5em;
+}
+
+.row-icon  {
+  margin-left: 1em;
+}
+
+
+.icon-row  {
+   margin: 0 1.5em;
+   width: 35px;
+   height: 35px;
+   border-radius: 50px;
+   border: 1px solid white;
+}
+
+i {
+  position: relative;
+  top: 5px;
+  left: 10px;
+}
+
+.icon-row:nth-of-type(1) > i {
+  left: 13px;
+}
+
+.icon-row:hover {
+  transform: scale(1.2);
+}
+
+.icon-row:hover:nth-of-type(1) {
+   background-color: #3b5998;
+}
+
+.icon-row:hover:nth-of-type(2) {
+  background-color: #00acee;
+}
+
+
+.icon-row:hover:nth-of-type(3) {
+  background: linear-gradient(-150deg, #8a3ab9,#cd486b,#fccc63,#bc2a8d,#e95950);
+}
+
+@keyframes shake {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(15deg); }
+  50% { transform: rotate(0eg); }
+  75% { transform: rotate(-15deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.icon-row:hover:nth-of-type(1) > i,
+.icon-row:hover:nth-of-type(2) > i,
+.icon-row:hover:nth-of-type(3) > i {
+   animation: shake 0.3s infinite;
+}
+
+
+.footer-row-item ul li > a:hover{
+  color: #fff;
+}
+
+.Error {
+  position: relative;
+  top: 7px;
+  color: var(--Light-Red--error);
+}
+
